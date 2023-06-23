@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bootstrap Web Application</title>
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
+            crossorigin="anonymous">
+    </head>
+    <body data-bs-theme="light">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg bg-body-tertiary ">
+            <div class="container ">
+                <a class="navbar-brand " href="#">Your Web Application</a>
+                <!-- Navbar content goes here -->
+            </div>
+        </nav>
+
+        <!-- Container -->
+        <div class="container mt-5">
+            <!-- Light/Dark Mode Switch -->
+            <div class="form-check form-switch mb-3">
+                <input
+                    class="form-check-input"
+                    type="checkbox"
+                    id="modeSwitch"
+                    onclick="myFunction()">
+                <label class="form-check-label" for="modeSwitch">Toggle Light/Dark Mode</label>
+            </div>
+
+            <!-- Row and Columns -->
+            <div class="row">
+                <div class="col-md-6">
+                    <!-- Left Column Content -->
+                </div>
+                <div class="col-md-6">
+                    <!-- Right Column Content -->
+                </div>
+            </div>
+
+            <!-- Typography -->
+            <h1 class="mt-5 ">Diffrent Football Leagues History</h1>
+            <br>
+            <p>Football, also known as soccer in some countries, has a rich history that
+                dates back centuries. The modern game of football as we know it today has its
+                roots in England and has spread worldwide to become the most popular sport
+                globally. Along with the game itself, numerous football leagues have been
+                established throughout history to organize competitive matches and showcase the
+                skills of teams and players. Let's explore the history of football and some of
+                its prominent leagues. Early History: The origins of football can be traced back
+                to ancient civilizations such as China, Greece, and Rome, where variations of
+                ball games were played. In medieval Europe, various forms of football were
+                played, often with different rules and regional variations. 19th Century: The
+                modern game of football began to take shape in the mid-19th century in England.
+                The Football Association (FA) was formed in 1863 in England, and it became the
+                governing body for football, establishing standardized rules. The first football
+                league, known as the English Football League (EFL), was founded in 1888. It
+                initially consisted of 12 teams and eventually grew into what is now the English
+                Premier League (EPL). 20th Century: Football continued to gain popularity
+                globally during the 20th century. The Fédération Internationale de Football
+                Association (FIFA) was established in 1904 as the international governing body
+                for football. Various national leagues were formed worldwide, including La Liga
+                in Spain (1929), Serie A in Italy (1929), and Bundesliga in Germany (1963).</p>
+            <br>
+            <br>
+            <br>
+            <!-- Images -->
+            <!-- <img src="path/to/image.jpg" class="img-fluid" alt="Responsive Image"> -->
+            <div class="mx-auto p-2" style="width: 70%;">
+                <img
+                    src="img/epl.jpg"
+                    class="rounded img-fluid col-xl-3 col-lg-3 col-sm-6 mx-3"
+                    style="width: 180px;"
+                    alt="...">
+                <img
+                    src="img/Bundesliga.jpg"
+                    class="rounded  img-fluid col-xl-3 col-lg-3 col-sm-6 mx-3"
+                    style="width: 180px; height: 258px;"
+                    alt="...">
+                <img
+                    src="img/leage1.png"
+                    class="rounded  img-fluid col-xl-3 col-lg-3 col-sm-6 mx-3"
+                    style="width: 180px; height: 258px;"
+                    alt="...">
+                <img
+                    src="img//LaLiga Color Codes.png"
+                    class="rounded  img-fluid col-xl-3 col-lg-3 col-sm-6 mx-3"
+                    style="width: 180px;"
+                    alt="...">
+            </div>
+
+            <!-- Table with Pagination -->
+            <table id="leagueTable" class="table table-striped mt-5">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Country</th>
+                        <th>Founded</th>
+                        <th>Teams</th>
+                    </tr>
+                    <tbody>
+                        <!-- Table rows go here -->
+                    </tbody>
+
+                </table>
+                <br>
+                <nav aria-label="Table Pagination">
+                    <ul class="pagination justify-content-center">
+                        <li class="page-item">
+                            <a class="page-link" href="#">Previous</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">1</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">2</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">3</a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" href="#">Next</a>
+                        </li>
+
+                    </ul>
+                </nav>
+                <!-- Form -->
+                <form>
+                    <div class="mb-3">
+                        <label for="inputField" class="form-label">Name</label>
+                        <input type="text" class="form-control w-50" id="inputField">
+                        <label for="inputField" class="form-label">Country</label>
+                        <input type="text" class="form-control w-50" id="inputField">
+                        <label for="inputField" class="form-label">Founded</label>
+                        <input type="text" class="form-control w-50" id="inputField">
+                        <label for="inputField" class="form-label">Teams</label>
+                        <input type="text" class="form-control w-50" id="inputField">
+                    </div>
+                    <button
+                        type="button"
+                        class="btn btn-primary"
+                        data-bs-toggle="modal"
+                        data-bs-target="#exampleModal">
+                        Submit
+                    </button>
+                </form>
+
+                <!-- Modal -->
+                <div
+                    class="modal fade"
+                    id="exampleModal"
+                    tabindex="-1"
+                    aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h1 class="modal-title fs-5" id="exampleModalLabel">Alert</h1>
+                                <button
+                                    type="button"
+                                    class="btn-close"
+                                    data-bs-dismiss="modal"
+                                    aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                Do you want to submit?
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="button" class="btn btn-primary">Ok</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Alerts -->
+                <div id="alertDiv" class="mt-3"></div>
+                <!-- Placeholder for the alert -->
+                <button id="alertButton" type="button" class="btn btn-primary mt-3">Show Alert</button>
+                <br>
+                <br>
+                <br>
+                <h2>Popularity Of League Based on 2019 survey</h2>
+                <br>
+                <ul class="list-group mt-3">
+                    <li class="list-group-item w-50">
+                        <p>Premier League
+                            <div
+                                class="progress w-100"
+                                role="progressbar"
+                                aria-label="Default striped example"
+                                aria-valuenow="10"
+                                aria-valuemin="0"
+                                aria-valuemax="100">
+                                <div class="progress-bar progress-bar-striped" style="width: 90%">90</div>
+                            </div>
+                        </p>
+
+                    </li>
+
+                    <li class="list-group-item w-50">
+                        <p>
+                            La Liga
+                            <div
+                                class="progress w-100"
+                                role="progressbar"
+                                aria-label="Default striped example"
+                                aria-valuenow="10"
+                                aria-valuemin="0"
+                                aria-valuemax="100">
+                                <div class="progress-bar progress-bar-striped" style="width: 70%">70</div>
+                            </div>
+                        </p>
+                    </li>
+                    <li class="list-group-item w-50">
+                        <p>
+                            League 1
+                            <div
+                                class="progress w-100"
+                                role="progressbar"
+                                aria-label="Default striped example"
+                                aria-valuenow="10"
+                                aria-valuemin="0"
+                                aria-valuemax="100">
+                                <div class="progress-bar progress-bar-striped" style="width: 50%">50</div>
+                            </div>
+                        </p>
+
+                    </li>
+                </ul>
+
+                <!-- Spinners and Progress Bars -->
+                <div class="spinner-border text-primary mt-3" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+
+                <!-- Pagination -->
+                <nav aria-label="Page navigation" class="mt-3">
+                    <ul class="pagination">
+                        <!-- Pagination links go here -->
+                    </ul>
+                </nav>
+
+                <!-- Canvas -->
+                <button
+                    class="btn btn-primary"
+                    type="button"
+                    data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasWithBothOptions"
+                    aria-controls="offcanvasWithBothOptions">Off Canvas</button>
+
+                <div
+                    class="offcanvas offcanvas-start"
+                    data-bs-scroll="true"
+                    tabindex="-1"
+                    id="offcanvasWithBothOptions"
+                    aria-labelledby="offcanvasWithBothOptionsLabel">
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Backdrop with scrolling</h5>
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="offcanvas"
+                            aria-label="Close"></button>
+                    </div>
+                    <div class="offcanvas-body">
+                        <p>Try scrolling the rest of the page to see this option in action.</p>
+                    </div>
+                </div>
+
+                <br>
+                <br>
+
+                <div>
+                    <!-- Tab View -->
+                    <ul class="nav nav-tabs mt-3 w-50" id="myTab" role="tablist">
+                        <li class="nav-item" role="presentation">
+                            <button
+                                class="nav-link active"
+                                id="tab1-tab"
+                                data-bs-toggle="tab"
+                                data-bs-target="#tab1"
+                                type="button"
+                                role="tab"
+                                aria-controls="tab1"
+                                aria-selected="true">Comment</button>
+                        </li>
+                        <li class="nav-item" role="presentation">
+                            <button
+                                class="nav-link"
+                                id="tab2-tab"
+                                data-bs-toggle="tab"
+                                data-bs-target="#tab2"
+                                type="button"
+                                role="tab"
+                                aria-controls="tab2"
+                                aria-selected="false">About us</button>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div
+                            class="tab-pane fade show active"
+                            id="tab1"
+                            role="tabpanel"
+                            aria-labelledby="tab1-tab">
+                            <p>
+                                <div class="form-floating">
+                                    <textarea
+                                        class="form-control w-50"
+                                        placeholder="Leave a comment here"
+                                        id="floatingTextarea2"
+                                        style="height: 200px"></textarea>
+                                    <label for="floatingTextarea2">Comments</label>
+                                </div>
+                            </p>
+                        </div>
+                        <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="tab2-tab">
+                            <br>
+                            <p>
+                                Welcome to our website! We are a dedicated team passionate about providing
+                                valuable information and resources to our users. Our mission is to create a
+                                platform that caters to various interests and needs, offering a wide range of
+                                topics and insights. At our core, we believe in the power of knowledge and the
+                                importance of sharing it. We strive to deliver accurate and up-to-date
+                                information, ensuring that our users have access to reliable content. Whether
+                                you're seeking educational resources, practical guides, or simply looking to
+                                expand your knowledge on various subjects, we've got you covered. Our team is
+                                comprised of experienced individuals from diverse backgrounds, bringing a wealth
+                                of expertise and perspectives to the table. We work tirelessly to curate and
+                                deliver content that is engaging, informative, and relevant to our users'
+                                interests. We value your feedback and engagement, as it helps us improve and
+                                tailor our content to better serve your needs. Feel free to explore our website,
+                                browse through our articles, and connect with us through our various channels.
+                                We're here to assist and provide you with a valuable and enjoyable experience.
+                                Thank you for visiting our website, and we hope you find our content useful and
+                                inspiring. Happy learning and exploring!
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <script
+                    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+                    integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+                    crossorigin="anonymous"></script>
+                <script src="js/script.js"></script>
+            </body>
+        </html>
